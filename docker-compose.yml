@@ -1,0 +1,44 @@
+version: "3.5"
+
+services:
+  jupyter:
+    build:
+      context: .
+    networks:
+      - jkz
+    container_name:
+      jupyter_plus_kafka
+    ports:
+      - "8888:8888"
+    depends_on:
+      - "kafka"
+      - "zookeeper"
+    command: jupyter lab --NotebookApp.token="faust"
+    volumes:
+      - ./faust:/home/jovyan/faust/
+      - ./notebooks:/home/jovyan/notebooks/
+  kafka:
+    container_name: kafka
+    image: confluentinc/cp-kafka:latest
+    ports:
+      - "9092:9092"
+    restart: always
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - jkz
+  zookeeper:
+    container_name: zookeeper
+    image: confluentinc/cp-zookeeper:latest
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    networks:
+      - jkz
+
+networks:
+  jkz:
+    name: jupyter-kafka-zookeeper
