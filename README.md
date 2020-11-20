@@ -68,7 +68,7 @@ This block defines the core of our program; an instance of `faust.App`. We give 
 
 ### Aside: Running a Faust app
 
-There's one last piece of code now standing between us and executing our fast application. If we simply enter `python my_example_faust_app.py` into our terminal, we'll get a usage guide, rather than actually executing our program (recall that we're executing `faust.App.main`). In order to actually start our program, we need to start a Faust worker -- a concept that isn't critical to understand to write a simple program, but can enable scaling and redundancy required for critical production systems. To do that simply provide the keyword `worker` along with our termainl command: `python my_example_faust_app.py worker`. Now, so long as we're able to connect to Kafka at `kafka:9092`, we have a Faust app that will wait to process messages for as long as we let it.
+There's one last piece of code now standing between us and executing our fast application. If we simply enter `python my_example_faust_app.py` into our terminal, we'll get a usage guide, rather than actually executing our program (recall that we're executing `faust.App.main`). In order to actually start our program, we need to start a Faust worker -- a concept that isn't critical to understand to write a simple program, but can enable scaling and redundancy required for critical production systems. To do that simply provide the keyword `worker` along with our terminal command: `python my_example_faust_app.py worker`. Now, so long as we're able to connect to Kafka at `kafka:9092`, we have a Faust app that will wait to process messages for as long as we let it.
 
 ### Part 2: Interactive Demonstration
 
@@ -88,30 +88,7 @@ In the terminal, execute `python faust/simple_faust_demo.py worker`. First you s
 
 Now, using the file browser on the left, open the `notebooks` folder, and then the `pykafka_producer.ipynb` notebook. We'll use this notebook to send messages to our Faust app via Kafka. It uses the `pykafka` package, rather than Faust, because this allows a much lower-level interface that is great for an interactive demo, but would be much tougher to build an application around. In that notebook, execute the first three cells:
 
-#### pykafka_producer.ipynb
-```python
-# Cell 1 connects to Kafka
-from pykafka import KafkaClient
-import pykafka
-
-from helpers.kafka_helpers import get_topic, produce_to_topic
-
-KAFKA_ADDRESS = 'kafka:9092'
-
-kafka_client = KafkaClient(KAFKA_ADDRESS)
-
-assert all([broker.connected for broker in kafka_client.brokers.values()])
-```
-```python
-# Cell 2 defines a topic
-topic1 = get_topic(topic_name='example_kafka_topic1',  # creates a new topic if it doesn't already exist
-                   client=kafka_client)
-```
-```python
-# Cell 3 publishes a message to that topic
-produce_to_topic(topic=topic1,  # topic must already exist
-                 message='hello')
-```
+![executing the first three cells sends a messagae to kafka](/images/messages_sent.png)
 
 All of this is, of course, barely scratching the surface of what Faust can do. And of course a lot more is documented on the project's homepage: https://faust.readthedocs.io. However, it can be hard to really get a handle on this code if you don't already have a working kafka instance to play around with. If you really want to give it a try yourself, visit this GitHub repo where, using only Docker Desktop, you can set yourself up a nice interactive environment to play around with Kafka, Faust, and more!
 
