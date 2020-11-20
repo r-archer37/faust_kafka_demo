@@ -76,6 +76,8 @@ For this demonstration, I make use of Jupyter Lab, Faust, Kafka, Zookeeper, and 
 
 Now, with the docker-compose still running, open a browser window and point it to `localhost:8888`. You should be prompted to enter a "Password or token" which is set to `faust`. Clicking Log In will bring you to the Jupyter Lab Launcher tab. From the Launcher, click Terminal. In the terminal, execute `python faust/simple_faust_demo.py worker`. If all goes well, you'll see a readout of app properties, a smiling face and a blinking cursor.
 
+![simple faust start screen](images/simple_faust_startup.png)
+
 Now, using the file browser on the left, open the `notebooks` folder, and then the `pykafka_producer.ipynb` notebook. We'll use this notebook to send messages to our Faust app via Kafka. It uses the `pykafka` package, rather than Faust, because this allows a much lower-level interface that is great for an interactive demo, but would be much tougher to build an application around. In that notebook, execute the first three cells:
 
 #### pykafka_producer.ipynb
@@ -104,3 +106,4 @@ produce_to_topic(topic=topic1,  # topic must already exist
 ```
 
 All of this is, of course, barely scratching the surface of what Faust can do. And of course a lot more is documented on the project's homepage: https://faust.readthedocs.io. However, it can be hard to really get a handle on this code if you don't already have a working kafka instance to play around with. If you really want to give it a try yourself, visit this GitHub repo where, using only Docker Desktop, you can set yourself up a nice interactive environment to play around with Kafka, Faust, and more!
+
