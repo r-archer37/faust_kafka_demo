@@ -88,7 +88,7 @@ In the terminal, execute `python faust/simple_faust_demo.py worker`. First you s
 
 Now, using the file browser on the left, open the `notebooks` folder, and then the `pykafka_producer.ipynb` notebook. We'll use this notebook to send messages to our Faust app via Kafka. It uses the `pykafka` package, rather than Faust, because this allows a much lower-level interface that is great for an interactive demo, but would be much tougher to build an application around. In that notebook, execute the first three cells:
 
-![executing the first three cells sends a messagae to kafka](/images/messages_sent.png)
+![executing the first three cells sends a messagae to kafka](/images/message_sent.png)
 
 All of this is, of course, barely scratching the surface of what Faust can do. And of course a lot more is documented on the project's homepage: https://faust.readthedocs.io. However, it can be hard to really get a handle on this code if you don't already have a working kafka instance to play around with. If you really want to give it a try yourself, visit this GitHub repo where, using only Docker Desktop, you can set yourself up a nice interactive environment to play around with Kafka, Faust, and more!
 
