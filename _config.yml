@@ -1,2 +1,3 @@
 theme: jekyll-theme-minimal
+description: An introduction to streaming data processing in python with faust, and an interactive demonstration all in one place
 show_downloads: true
