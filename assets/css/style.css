@@ -2,8 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
-div.ex1 {
-  width: 1000px;
+p {
+  max-width: 1000px;
   margin: auto;
-  border: 3px solid #73AD21;
 }
