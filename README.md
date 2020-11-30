@@ -1,5 +1,5 @@
-#### Before we Begin
-This article is the `readme.md` file of a github repository that contains all the code you'll need to try this out yourself. The only software you'll need is [Docker Desktop](https://www.docker.com/products/docker-desktop), so go ahead and download it now. 
+### Before we Begin
+This article is the `readme.md` file of a github repository that contains all the code you'll need to try this out yourself. Download or clone it using the links above. The only software you'll need is [Docker Desktop](https://www.docker.com/products/docker-desktop), so go ahead get that too.
 
 ## Processing Streaming Data with Python
 
