@@ -5,7 +5,7 @@ app = faust.App('example_faust_app',
                 value_serializer='raw'
                )
 
-input_stream = app.topic('example_kafka_topic1')
+input_stream = app.topic('example_kafka_topic')
 
 @app.agent(input_stream)
 async def report_messages_received(messages):
