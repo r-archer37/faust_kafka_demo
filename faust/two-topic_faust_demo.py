@@ -5,9 +5,9 @@ app = faust.App('example_faust_app',
                 value_serializer='raw'
                )
 
-input_stream1 = app.topic('example_kafka_topic1')
+input_stream1 = app.topic('example_kafka_topic')
 input_stream2 = app.topic('example_kafka_topic2')
-input_stream_1_and_2 = app.topic('example_kafka_topic1', 
+input_stream_1_and_2 = app.topic('example_kafka_topic', 
                                  'example_kafka_topic2')
 
 

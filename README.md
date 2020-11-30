@@ -1,7 +1,9 @@
+## Processing Streaming Data with Python
+
 ### Before we Begin
 This article is the `readme.md` file of a github repository that contains all the code you'll need to try this out yourself. Download or clone it using the links above. The only software you'll need is [Docker Desktop](https://www.docker.com/products/docker-desktop), so go ahead get that too.
 
-## Processing Streaming Data with Python
+### Introduction & Motivation
 
 Think about code you've written to analyze data in python -- what was the first thing the code did? If it's anything like data analysis code I've written, it started with loading data into memory from a database, or from a file that looks like a database (i.e, has a row-and-column structure). It's an easy thing to do; python has very effective tools to load data structured that way (as do R and any number of other programming languages).
 
