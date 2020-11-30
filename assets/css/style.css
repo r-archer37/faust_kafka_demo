@@ -1,8 +1,0 @@
----
----
-
-@import "{{ site.theme }}";
-p {
-  max-width: 1000px;
-  margin: auto;
-}
